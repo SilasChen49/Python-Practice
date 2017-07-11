@@ -1,0 +1,13 @@
+from PIL import Image
+im1 = Image.open('image1.png')
+im2 = Image.open('image2.png')
+# im3 = im2.resize((300,300))
+# im3.save('image2.png')
+# im1.show()
+print(im1.size, ' ', im2.size)
+#im2.show()
+box = im2.copy()
+box = (180,0,300,130)
+region = im2.crop(box)
+im1.paste(region, box)
+im1.show()
